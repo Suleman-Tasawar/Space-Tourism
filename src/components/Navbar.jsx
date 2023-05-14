@@ -1,6 +1,6 @@
 function Navigation() {
   return (
-    <nav className="flex justify-evenly align-middle">
+    <nav className=" flex justify-evenly align-middle">
       <div className="logo">
         <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48">
           <g fill="none" fillRule="evenodd">
@@ -13,12 +13,20 @@ function Navigation() {
         </svg>
       </div>
 
-      <div className="blur-sm">
+      <div className="blur-0">
         <ul className="flex font-barlow">
-          <li className="ml-5 uppercase text-NearDarkGrey">01 Home</li>
-          <li className="ml-5 uppercase text-NearDarkGrey">02 Destinations</li>
-          <li className="ml-5 uppercase text-NearDarkGrey">03 Technoligies</li>
-          <li className="ml-5 uppercase text-NearDarkGrey">04 Crew</li>
+          <li className="ml-5 uppercase text-NearDarkGrey cursor-pointer hover:border-b-2">
+            01 Home
+          </li>
+          <li className="ml-5 uppercase text-NearDarkGrey cursor-pointer hover:border-b-2">
+            02 Destinations
+          </li>
+          <li className="ml-5 uppercase text-NearDarkGrey cursor-pointer hover:border-b-2">
+            03 Technoligies
+          </li>
+          <li className="ml-5 uppercase text-NearDarkGrey cursor-pointer hover:border-b-2">
+            04 Crew
+          </li>
         </ul>
       </div>
     </nav>

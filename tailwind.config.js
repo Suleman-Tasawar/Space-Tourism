@@ -16,7 +16,8 @@ export default {
         barlow:['Barlow', 'sans-serif']
       },
       colors:{
-        NearDarkGrey:'#979797'
+        NearDarkGrey:'#979797',
+        homeTextGrey:"#D0D6F9"
       }
     },
   },
