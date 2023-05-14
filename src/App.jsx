@@ -1,12 +1,13 @@
 import "./App.css";
+import Navigation from "./components/Navbar";
 
 function App() {
   return (
-    <>
-      <h1 className="text-3xl text-blue-600 font-bold">
-        Firing up the Project
-      </h1>
-    </>
+    <div className="lg:bg-[/home/background-home-desktop.jpg]">
+      <header>
+        <Navigation />
+      </header>
+    </div>
   );
 }
 
