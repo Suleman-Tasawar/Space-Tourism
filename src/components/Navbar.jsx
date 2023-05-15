@@ -1,3 +1,4 @@
+import { BrowserRouter, Route, Link } from "react-router-dom";
 function Navigation() {
   return (
     <nav className=" flex justify-evenly align-middle">
@@ -16,16 +17,16 @@ function Navigation() {
       <div className="blur-0">
         <ul className="flex font-barlow">
           <li className="ml-5 uppercase text-NearDarkGrey cursor-pointer hover:border-b-2">
-            01 Home
+            <Link to="/">01 Home</Link>
           </li>
           <li className="ml-5 uppercase text-NearDarkGrey cursor-pointer hover:border-b-2">
-            02 Destinations
+            <Link to="/Destinations">02 Destinations</Link>
           </li>
           <li className="ml-5 uppercase text-NearDarkGrey cursor-pointer hover:border-b-2">
-            03 Technoligies
+            <Link to="/Technologies">03 Technologies</Link>
           </li>
           <li className="ml-5 uppercase text-NearDarkGrey cursor-pointer hover:border-b-2">
-            04 Crew
+            <Link to="/Crew">04 Crew</Link>
           </li>
         </ul>
       </div>
