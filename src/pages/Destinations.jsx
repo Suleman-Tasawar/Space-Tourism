@@ -55,12 +55,12 @@ function Destinations() {
 
   return (
     <div style={styles}>
-      <h1 className="text-white text-xl text-left ml-5">
+      <h1 className="text-white text-xl text-left ml-12 pt-12">
         <span className="text-NearDarkGrey">01</span> PICK YOUR DESTINATION
       </h1>
 
       <nav className="relative">
-        <ul className="flex absolute top-32 right-32">
+        <ul className="flex absolute top-32 right-56">
           <li
             className="text-NearDarkGrey ml-6 hover:text-white hover:underline cursor-pointer "
             onClick={() => showDestination(0)}

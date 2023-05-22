@@ -1,7 +1,7 @@
 // eslint-disable-next-line react/prop-types
 function Destination({ img, title, text, distance, time }) {
   return (
-    <div className="flex justify-evenly items-center mt-28">
+    <div className="flex justify-evenly items-center mt-28 relative">
       <div>
         <img
           className="w-[445px] h-[445px]"

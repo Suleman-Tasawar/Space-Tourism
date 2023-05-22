@@ -1,9 +1,9 @@
 import { BrowserRouter, Route, Link } from "react-router-dom";
 function Navigation() {
   return (
-    <nav className=" flex justify-evenly align-middle">
+    <nav className=" flex justify-evenly align-middle absolute top-20">
       <div className="logo">
-        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35">
           <g fill="none" fillRule="evenodd">
             <circle cx="24" cy="24" r="24" fill="#FFF" />
             <path
@@ -14,8 +14,8 @@ function Navigation() {
         </svg>
       </div>
 
-      <div className="blur-0">
-        <ul className="flex font-barlow">
+      <div className="blur-0 bg-NavBarBg">
+        <ul className="flex font-barlow mt-5">
           <li className="ml-5 uppercase text-NearDarkGrey cursor-pointer hover:border-b-2">
             <Link to="/">01 Home</Link>
           </li>

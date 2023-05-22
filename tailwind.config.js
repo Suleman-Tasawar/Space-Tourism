@@ -17,7 +17,8 @@ export default {
       },
       colors:{
         NearDarkGrey:'#979797',
-        homeTextGrey:"#D0D6F9"
+        homeTextGrey:"#D0D6F9",
+        NavBarBg: "#979797"
       }
     },
   },
