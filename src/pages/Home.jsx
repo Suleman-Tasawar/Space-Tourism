@@ -9,7 +9,7 @@ function Home() {
   return (
     <div
       style={styles}
-      className="relative flex justify-evenly items-center font-barlow"
+      className="flex justify-evenly items-center font-barlow"
     >
       <div className="w-[450px] text-left ">
         <h2 className="text-homeTextGrey text-lg">SO, YOU WANT TO TRAVEL TO</h2>

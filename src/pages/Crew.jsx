@@ -5,7 +5,6 @@ function Crew() {
   const [showCrew, setShowCrew] = useState(null);
 
   const styles = {
-    position: "relative",
     height: "100vh",
     backgroundImage: "url(/assets/crew/background-crew-desktop.jpg)",
     backgroundPosition: "center",
@@ -43,7 +42,9 @@ function Crew() {
       img: "/assets/crew/image-anousheh-ansari.png",
     },
   ];
-
+  /*
+  This Function will display the data of the planet whose name is clicked
+  */
   const crewMembers = (id, dataArr) => {
     let selectedCrew = dataArr.find((person) => person.id === id);
     setShowCrew(selectedCrew);
