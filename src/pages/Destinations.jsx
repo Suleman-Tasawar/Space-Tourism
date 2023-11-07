@@ -2,7 +2,7 @@ import Destination from "../components/Destinations";
 import { useState } from "react";
 
 function Destinations() {
-  const [showsDestination, setShowDestination] = useState(null);
+  const [showsDestination, setShowDestination] = useState(false);
 
   const styles = {
     height: "100vh",
@@ -49,8 +49,11 @@ function Destinations() {
   ];
 
   const showDestination = (key) => {
-    const selectedDestination = data.find((element) => element.id === key);
-    setShowDestination(selectedDestination);
+    const selectedDestination = data.filter(
+      (destination) => destination.id == key
+    );
+    setShowDestination(true);
+    return selectedDestination;
   };
 
   return (
