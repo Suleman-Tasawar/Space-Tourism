@@ -2,7 +2,7 @@ import Destination from "../components/Destinations";
 import { useState } from "react";
 
 function Destinations() {
-  const [showsDestination, setShowDestination] = useState(false);
+  const [showsDestination, setShowDestination] = useState(null);
 
   const styles = {
     height: "100vh",
@@ -49,17 +49,14 @@ function Destinations() {
   ];
 
   const showDestination = (key) => {
-    const selectedDestination = data.filter(
-      (destination) => destination.id == key
-    );
-    setShowDestination(true);
-    return selectedDestination;
+    const selectedDestination = data.find((element) => element.id === key);
+    setShowDestination(selectedDestination);
   };
 
   return (
     <div style={styles}>
-      <h1 className="text-white text-xl text-left ml-12 pt-12">
-        <span className="text-NearDarkGrey">01</span> PICK YOUR DESTINATION
+      <h1 className="text-white text-xl text-left ml-12 pt-32">
+        <span className="text-NearDarkGrey ">01</span> PICK YOUR DESTINATION
       </h1>
 
       <nav className="relative">

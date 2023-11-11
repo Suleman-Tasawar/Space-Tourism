@@ -1,36 +1,76 @@
+import { useState } from "react";
 import { BrowserRouter, Route, Link } from "react-router-dom";
-function Navigation() {
-  return (
-    <nav className="absolute top-5 left-[32%] flex justify-between align-middle">
-      <div className="logo">
-        <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35">
-          <g fill="none" fillRule="evenodd">
-            <circle cx="24" cy="24" r="24" fill="#FFF" />
-            <path
-              fill="#0B0D17"
-              d="M24 0c0 16-8 24-24 24 15.718.114 23.718 8.114 24 24 0-16 8-24 24-24-16 0-24-8-24-24z"
-            />
-          </g>
-        </svg>
-      </div>
 
-      <div>
-        <ul className="flex font-barlow mt-5">
-          <li className="ml-5 uppercase text-NearDarkGrey cursor-pointer hover:border-b-2">
-            <Link to="/">01 Home</Link>
-          </li>
-          <li className="ml-5 uppercase text-NearDarkGrey cursor-pointer hover:border-b-2">
-            <Link to="/Destinations">02 Destinations</Link>
-          </li>
-          <li className="ml-5 uppercase text-NearDarkGrey cursor-pointer hover:border-b-2">
-            <Link to="/Technologies">03 Technologies</Link>
-          </li>
-          <li className="ml-5 uppercase text-NearDarkGrey cursor-pointer hover:border-b-2">
-            <Link to="/Crew">04 Crew</Link>
-          </li>
-        </ul>
-      </div>
-    </nav>
+function Navigation() {
+  const [active, setActive] = useState(false);
+  const [closeIcon, setCloseIcon] = useState(false);
+
+  const navActive = () => {
+    setActive(!active);
+    setCloseIcon(true);
+  };
+
+  const closeActiveNav = () => {
+    setActive(!active);
+  };
+  return (
+    <div className="relative">
+      <nav className="absolute top-8 flex justify-between align-middle">
+        <div className="logo w-20 h-20">
+          <img src="./assets/shared/logo.svg" alt="Logo" />
+        </div>
+        <div className="ml-96">
+          <div className="lg:hidden md:hidden sm:block" onClick={navActive}>
+            <img src="./assets/shared/icon-hamburger.svg" alt="Menu Icon" />
+          </div>
+          {active && (
+            <div
+              style={{
+                background: "rgba(255, 255, 255, 0.04)",
+                backdropFilter: " blur(40.774227142333984px)",
+              }}
+              className="sm:fixed sm:right-0 sm:top-0 sm:w-[250px] sm:h-screen"
+            >
+              <ul className="flex font-barlow mt-5 lg:flex-row md:flex-row sm:flex-col sm:leading-[5rem]">
+                {closeIcon && (
+                  <div
+                    className="lg:hidden md:hidden sm:block"
+                    onClick={closeActiveNav}
+                  >
+                    <img src="/assets/shared/icon-close.svg" alt="Menu Close" />
+                  </div>
+                )}
+                <Link to="/">
+                  {" "}
+                  <li className="sm:text-white-0 ml-5 uppercase text-NearDarkGrey cursor-pointer focus:border-b-2">
+                    01 Home
+                  </li>{" "}
+                </Link>
+
+                <Link to="/Destinations">
+                  {" "}
+                  <li className="ml-5 uppercase sm:text-white text-NearDarkGrey cursor-pointer focus:border-b-2">
+                    02 Destinations
+                  </li>{" "}
+                </Link>
+
+                <Link to="/Technologies">
+                  <li className="ml-5 uppercase sm:text-white text-NearDarkGrey cursor-pointer focus:border-b-2">
+                    03 Technologies
+                  </li>{" "}
+                </Link>
+
+                <Link to="/Crew">
+                  <li className="ml-5 uppercase sm:text-white text-NearDarkGrey cursor-pointer focus:border-b-2">
+                    04 Crew
+                  </li>{" "}
+                </Link>
+              </ul>
+            </div>
+          )}
+        </div>
+      </nav>
+    </div>
   );
 }
 
