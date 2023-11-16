@@ -52,12 +52,11 @@ function Crew() {
 
   return (
     <div style={styles}>
-      <h2 className="text-white capitalize">
-        <span className="text-NearDarkGrey">02 </span>
-        meet your crew
-      </h2>
-
       <div>
+        <h2 className="text-white capitalize">
+          <span className="text-NearDarkGrey">02 </span>
+          meet your crew
+        </h2>
         {showCrew && (
           <Team
             jobTitle={showCrew.lable}

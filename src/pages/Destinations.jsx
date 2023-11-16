@@ -2,9 +2,10 @@ import Destination from "../components/Destinations";
 import { useState } from "react";
 
 function Destinations() {
-  const [showsDestination, setShowDestination] = useState(null);
+  const [showsDestination, setShowDestination] = useState(true);
 
   const styles = {
+    width: "100%",
     height: "100vh",
     backgroundImage:
       "url(/assets/destination/background-destination-desktop.jpg)",
@@ -59,35 +60,6 @@ function Destinations() {
         <span className="text-NearDarkGrey ">01</span> PICK YOUR DESTINATION
       </h1>
 
-      <nav className="relative">
-        <ul className="flex absolute top-32 right-56">
-          <li
-            className="text-NearDarkGrey ml-6 hover:text-white hover:underline cursor-pointer "
-            onClick={() => showDestination(0)}
-          >
-            MOON
-          </li>
-          <li
-            className="text-NearDarkGrey ml-6 hover:text-white hover:underline cursor-pointer"
-            onClick={() => showDestination(1)}
-          >
-            MARS
-          </li>
-          <li
-            className="text-NearDarkGrey ml-6 hover:text-white hover:underline cursor-pointer"
-            onClick={() => showDestination(2)}
-          >
-            EUR0PA
-          </li>
-          <li
-            className="text-NearDarkGrey ml-6 hover:text-white hover:underline cursor-pointer"
-            onClick={() => showDestination(3)}
-          >
-            TITAN
-          </li>
-        </ul>
-      </nav>
-
       <div>
         {showsDestination && (
           <Destination
@@ -96,6 +68,7 @@ function Destinations() {
             text={showsDestination.text}
             distance={showsDestination.distance}
             time={showsDestination.time}
+            showDestination={showDestination}
           />
         )}
       </div>
