@@ -1,0 +1,59 @@
+ /*
+    <div className="relative">
+      <nav className="flex justify-between align-middle absolute top-8">
+        <div className="logo w-20 h-20">
+          <img src="./assets/shared/logo.svg" alt="Logo" />
+        </div>
+        <div className="ml-96">
+          <div
+            className="lg:hidden md:hidden sm:block cursor-pointer"
+            onClick={toggleNav}
+          >
+            <img src="./assets/shared/icon-hamburger.svg" alt="Menu Icon" />
+          </div>
+          <div
+            className={` ${navToggler ? "sm:flex-col" : "sm:hidden"}
+             sm:hidden sm:right-0 sm:top-0 sm:w-[250px] sm:h-screen md:h-0 lg:h-0 bg-opacity-4 backdrop-blur-[40.774227142333984px] lg:flex md:flex`}
+          >
+            <ul className="font-barlow mt-5 lg:flex-row md:flex-row sm:hidden sm:leading-[5rem]">
+              <div className="lg:hidden md:hidden sm:block" onClick={toggleNav}>
+                <img src="/assets/shared/icon-close.svg" alt="Menu Close" />
+              </div>
+              <Link
+                to="/"
+                className="sm:text-white ml-5 uppercase md:text-NearDarkGrey lg:text-NearDarkGrey cursor-pointer focus:border-b-2"
+              >
+                01 Home
+              </Link>
+
+              <Link
+                to="/Destinations"
+                className="sm:text-white ml-5 uppercase md:text-NearDarkGrey lg:text-NearDarkGrey cursor-pointer focus:border-b-2"
+              >
+                02 Destinations
+              </Link>
+
+              <Link
+                to="/Technologies"
+                className="sm:text-white ml-5 uppercase md:text-NearDarkGrey lg:text-NearDarkGrey cursor-pointer focus:border-b-2"
+              >
+                03 Technologies
+              </Link>
+
+              <Link
+                to="/Crew"
+                className="sm:text-white ml-5 uppercase md:text-NearDarkGrey lg:text-NearDarkGrey cursor-pointer focus:border-b-2"
+              >
+                04 Crew
+              </Link>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>*/
+  );
+
+  const [navToggler, setNavToggler] = useState(false);
+  function toggleNav() {
+    setNavToggler(!navToggler);
+  }

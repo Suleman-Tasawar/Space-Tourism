@@ -9,12 +9,12 @@ function Home() {
   return (
     <div
       style={styles}
-      className="flex lg:flex-row md:flex-row sm:flex-col justify-evenly items-center font-barlow"
+      className="pt-10 flex lg:flex-row md:flex-row sm:flex-col justify-evenly items-center font-barlow"
     >
       <div className="lg:w-[450px] md:w-[350px] sm:w-[250px] lg:text-left sm:text-center sm:pt-4 ">
         <h2 className="text-homeTextGrey text-lg">SO, YOU WANT TO TRAVEL TO</h2>
         <h1 className="text-white text-4xl mt-6">SPACE</h1>
-        <p className="text-homeTextGrey mt-6">
+        <p className="text-homeTextGrey mt-6 lg:text-lg md:text-lg sm:text-lg">
           Let’s face it; if you want to go to space, you might as well genuinely
           go to outer space and not hover kind of on the edge of it. Well sit
           back, and relax because we’ll give you a truly out of this world

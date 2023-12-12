@@ -5,8 +5,7 @@ function Destinations() {
   const [showsDestination, setShowDestination] = useState(true);
 
   const styles = {
-    width: "100%",
-    height: "100vh",
+    height: "120vh",
     backgroundImage:
       "url(/assets/destination/background-destination-desktop.jpg)",
     backgroundPosition: "center",
@@ -55,7 +54,7 @@ function Destinations() {
   };
 
   return (
-    <div style={styles}>
+    <div style={styles} className="md:h-[140vh]">
       <h1 className="text-white text-xl text-left ml-12 pt-32">
         <span className="text-NearDarkGrey ">01</span> PICK YOUR DESTINATION
       </h1>
