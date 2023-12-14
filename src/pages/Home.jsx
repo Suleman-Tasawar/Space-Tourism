@@ -22,7 +22,7 @@ function Home() {
         </p>
       </div>
 
-      <div className="flex justify-center items-center w-[350px] h-[350px] sm:w-[300px] sm:h-[300px]    hover:bg-NearDarkGrey transition hover:rounded-full">
+      <div className="flex justify-center items-center w-[350px] h-[350px] sm:w-[300px] sm:h-[300px]    focus-within:bg-NearDarkGrey focus-within:transition-all focus-within:rounded-full">
         <button className="lg:w-[274px] lg:h-[273px] md:w-[230px] md:h-[230px] sm:w-[200px] sm:h-[200px] bg-white rounded-full">
           Explore
         </button>

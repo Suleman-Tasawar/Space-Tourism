@@ -18,7 +18,8 @@ export default {
       colors:{
         NearDarkGrey:'#979797',
         homeTextGrey:"#D0D6F9",
-        NavBarBg: "#979797"
+        NavBarBg: "#979797",
+        navBarResp: "rgba(255, 255, 255, 0.04)"
       }
     },
   },

@@ -7,8 +7,6 @@ function Crew() {
   const styles = {
     height: "100vh",
     backgroundImage: "url(/assets/crew/background-crew-desktop.jpg)",
-    backgroundPosition: "center",
-    backgroundSize: "cover",
   };
 
   //data of crew members
@@ -51,7 +49,7 @@ function Crew() {
   };
 
   return (
-    <div style={styles}>
+    <div style={styles} className="bg-cover">
       <div>
         <h2 className="text-white capitalize">
           <span className="text-NearDarkGrey">02 </span>
