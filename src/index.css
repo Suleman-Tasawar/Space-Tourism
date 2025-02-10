@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* Tailwind config for custom navbar background blur and more */
+
+@layer utilities {
+    .bg-navBarBg {
+      background-color: rgba(0, 0, 0, 0.7); /* Or any custom background color */
+    }
+  
+    .bg-navBarResp {
+      background-color: rgba(0, 0, 0, 0.9); /* Transparent bg for responsive nav */
+    }
+  }
+  

@@ -1,52 +1,22 @@
 import { useState } from "react";
 import Team from "../components/Team";
+import { crew } from "../utlis/data";
 
 function Crew() {
-  const [showCrew, setShowCrew] = useState(null);
+  const [selectedCrew, setSelectedCrew] = useState(0); 
 
   const styles = {
     height: "100vh",
     backgroundImage: "url(/assets/crew/background-crew-desktop.jpg)",
   };
 
-  //data of crew members
-  const crew = [
-    {
-      id: 0,
-      name: "Douglas Hurley",
-      lable: "Commander ",
-      info: "Douglas Gerald Hurley is an American engineer, former Marine Corps pilot and former NASA astronaut. He launched into space for the third time as commander of Crew Dragon Demo-2.",
-      img: "/assets/crew/image-douglas-hurley.png",
-    },
-    {
-      id: 1,
-      name: "MARK SHUTTLEWORTH",
-      lable: "Mission Specialist ",
-      info: "Mark Richard Shuttleworth is the founder and CEO of Canonical, the company behind the Linux-based Ubuntu operating system. Shuttleworth became the first South African to travel to space as a space tourist.",
-      img: "/assets/crew/image-mark-shuttleworth.png",
-    },
-    {
-      id: 2,
-      name: "Victor Glover",
-      lable: "PILOT",
-      info: "Pilot on the first operational flight of the SpaceX Crew Dragon to the International Space Station. Glover is a commander in the U.S. Navy where he pilots an F/A-18.He was a crew member of Expedition 64, and served as a station systems flight engineer. ",
-      img: "/assets/crew/image-victor-glover.png",
-    },
-    {
-      id: 3,
-      name: "Anousheh Ansari",
-      lable: "Flight Engineer",
-      info: "Anousheh Ansari is an Iranian American engineer and co-founder of Prodea Systems. Ansari was the fourth self-funded space tourist, the first self-funded woman to fly to the ISS, and the first Iranian in space. ",
-      img: "/assets/crew/image-anousheh-ansari.png",
-    },
-  ];
-  /*
-  This Function will display the data of the planet whose name is clicked
-  */
-  const crewMembers = (id, dataArr) => {
-    let selectedCrew = dataArr.find((person) => person.id === id);
-    setShowCrew(selectedCrew);
+
+  // Function to display selected crew member
+  const selectCrewMember = (id) => {
+    setSelectedCrew(id);
   };
+
+  const crewMember = crew[selectedCrew];
 
   return (
     <div style={styles} className="bg-cover">
@@ -55,44 +25,37 @@ function Crew() {
           <span className="text-NearDarkGrey">02 </span>
           meet your crew
         </h2>
-        {showCrew && (
+
+        {crewMember && (
           <Team
-            jobTitle={showCrew.lable}
-            crewName={showCrew.name}
-            crewInfo={showCrew.info}
-            crewImg={showCrew.img}
+            jobTitle={crewMember.lable}
+            crewName={crewMember.name}
+            crewInfo={crewMember.info}
+            crewImg={crewMember.img}
           />
         )}
       </div>
+
+      {/* Radio buttons for selecting crew members */}
       <div className="absolute bottom-24 left-24 flex justify-evenly items-center">
-        <input
-          className="bg-NearDarkGrey focus:bg-white ml-4 w-4 h-4 border-none"
-          type="radio"
-          name="first person"
-          id="one"
-          onClick={() => crewMembers(0, crew)}
-        />
-        <input
-          className="bg-NearDarkGrey focus:bg-white ml-4 w-4 h-4 border-none"
-          type="radio"
-          name="second person"
-          id="two"
-          onClick={() => crewMembers(1, crew)}
-        />
-        <input
-          className="bg-NearDarkGrey focus:bg-white ml-4 w-4 h-4 border-none"
-          type="radio"
-          name="third person"
-          id="three"
-          onClick={() => crewMembers(2, crew)}
-        />
-        <input
-          className="bg-NearDarkGrey focus:bg-white ml-4 w-4 h-4 border-none"
-          type="radio"
-          name="fourth person"
-          id="fourth"
-          onClick={() => crewMembers(3, crew)}
-        />
+        {crew.map((member) => (
+          <div key={member.id} className="flex items-center">
+            <input
+              className="bg-NearDarkGrey focus:bg-white ml-4 w-4 h-4 border-none"
+              type="radio"
+              name="crew-member"
+              id={`crew-${member.id}`}
+              checked={selectedCrew === member.id} 
+              onChange={() => selectCrewMember(member.id)}
+            />
+            <label
+              className="text-white ml-2 cursor-pointer"
+              htmlFor={`crew-${member.id}`}
+            >
+              {member.name.split(" ")[0]}
+            </label>
+          </div>
+        ))}
       </div>
     </div>
   );
