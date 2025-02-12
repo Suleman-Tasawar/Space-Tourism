@@ -1,7 +1,6 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-/* Tailwind config for custom navbar background blur and more */
 
 @layer utilities {
     .bg-navBarBg {
@@ -12,4 +11,25 @@
       background-color: rgba(0, 0, 0, 0.9); /* Transparent bg for responsive nav */
     }
   }
+
+.route-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.route-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms ease-in-out, transform 300ms ease-in-out;
+}
+
+.route-exit {
+  opacity: 1;
+}
+
+.route-exit-active {
+  opacity: 0;
+  transition: opacity 300ms ease-in-out;
+}
+
   
