@@ -36,7 +36,7 @@ function Technologies() {
   };
 
   return (
-    <div className="pt-32" style={styles}>
+    <div className="pt-32 h-[100vh]" style={styles}>
       <h1 className="text-left text-2xl text-white">
         <span className="text-NearDarkGrey mr-1">03</span> SPACE LAUNCH 101
       </h1>

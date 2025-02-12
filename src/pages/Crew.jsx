@@ -11,7 +11,7 @@ function Crew() {
   };
 
 
-  // Function to display selected crew member
+  //This will select the current data for crew member when clicked from id
   const selectCrewMember = (id) => {
     setSelectedCrew(id);
   };
@@ -39,21 +39,15 @@ function Crew() {
       {/* Radio buttons for selecting crew members */}
       <div className="absolute bottom-24 left-24 flex justify-evenly items-center">
         {crew.map((member) => (
-          <div key={member.id} className="flex items-center">
+          <div key={member.id} className="flex items-center cursor-pointer">
             <input
-              className="bg-NearDarkGrey focus:bg-white ml-4 w-4 h-4 border-none"
+              className="bg-NearDarkGrey focus:bg-white ml-4 w-4 h-4 border-none cursor-pointer"
               type="radio"
               name="crew-member"
               id={`crew-${member.id}`}
               checked={selectedCrew === member.id} 
               onChange={() => selectCrewMember(member.id)}
             />
-            <label
-              className="text-white ml-2 cursor-pointer"
-              htmlFor={`crew-${member.id}`}
-            >
-              {member.name.split(" ")[0]}
-            </label>
           </div>
         ))}
       </div>
